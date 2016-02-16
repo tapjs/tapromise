@@ -70,7 +70,7 @@ receives.
 
 ## API
 
-* `tapromise(Test)` Returns a `tapromise` object with
+* `tapromise(test)` Returns a `tapromise` object with
   methods corresponding to all methods on the `tap.Test` argument that
   accept Promises as args and returns a Promise that resolves when the
   assert has been made.
