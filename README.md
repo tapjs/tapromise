@@ -2,6 +2,8 @@
 
 Turn any tap Test object into a promise-resolving thingie
 
+[![Build Status](https://travis-ci.org/tapjs/tapromise.svg?branch=master)](https://travis-ci.org/tapjs/tapromise)
+
 If you're using [tap](http://npm.im/tap) for tests, and those test
 interact with a lot of Promises, sometimes it's nice to be able to do
 asserts against those objects by resolving them first.
