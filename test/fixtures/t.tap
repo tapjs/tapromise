@@ -1,23 +1,23 @@
 TAP version 13
     # Subtest: promises with tapromise
-    ok 1 - this comes before the rejection
-    ok 2 - should be equal
-    ok 3 - expect truthy value
-    ok 4 - should match pattern provided
-    not ok 5 - type is Number
+    ok 1 - should be equal
+    ok 2 - expect truthy value
+    ok 3 - should match pattern provided
+    not ok 4 - type is Number
       ---
-      {"at":{"column":7,"file":"test/fixtures/t.js","line":14},"compare":"===","found":"string","source":"t.isa(Promise.resolve('foo'), Number),\n","wanted":"Number"}
+      {"at":{"column":7,"file":"test/fixtures/t.js","line":15},"compare":"===","found":"string","source":"t.isa(Promise.resolve('foo'), Number),\n","wanted":"Number"}
       ...
-    ok 6 - type is string
+    ok 5 - type is string
+    ok 6 - this comes after the rejection
     not ok 7 - Error: oops
       ---
-      {"at":{"column":28,"file":"test/fixtures/t.js","line":16},"message":"Error: oops","source":"t.match(Promise.reject(new Error('oops')), {}),\n","test":"promises with tapromise"}
+      {"at":{"column":28,"file":"test/fixtures/t.js","line":17},"message":"Error: oops","source":"t.match(Promise.reject(new Error('oops')), {}),\n","test":"promises with tapromise"}
       ...
     1..7
     # failed 2 of 7 tests
 not ok 1 - promises with tapromise ___/# time=[0-9.]+(ms)?/~~~
   ---
-  {"at":{"column":3,"file":"test/fixtures/t.js","line":8},"results":{"count":7,"fail":2,"ok":false,"pass":5,"plan":{"end":7,"start":1}},"source":"t.test('promises with tapromise', function (t) {\n"}
+  {"at":{"column":3,"file":"test/fixtures/t.js","line":9},"results":{"count":7,"fail":2,"ok":false,"pass":5,"plan":{"end":7,"start":1}},"source":"t.test('promises with tapromise', function (t) {\n"}
   ...
 
     # Subtest: promises with just tap
@@ -26,19 +26,18 @@ not ok 1 - promises with tapromise ___/# time=[0-9.]+(ms)?/~~~
     ok 3 - should match pattern provided
     not ok 4 - type is Number
       ---
-      {"at":{"column":7,"file":"test/fixtures/t.js","line":32},"compare":"===","found":"string","source":"t.isa(num, Number)\n","wanted":"Number"}
+      {"at":{"column":7,"file":"test/fixtures/t.js","line":35},"compare":"===","found":"string","source":"t.isa(num, Number)\n","wanted":"Number"}
       ...
     ok 5 - type is string
-    ok 6 - this comes before the rejection
-    not ok 7 - Error: oops
+    not ok 6 - Error: oops
       ---
-      {"at":{"column":27,"file":"test/fixtures/t.js","line":38},"message":"Error: oops","source":"return Promise.reject(new Error('oops'))\n","test":"promises with just tap"}
+      {"at":{"column":27,"file":"test/fixtures/t.js","line":39},"message":"Error: oops","source":"return Promise.reject(new Error('oops'))\n","test":"promises with just tap"}
       ...
-    1..7
-    # failed 2 of 7 tests
+    1..6
+    # failed 2 of 6 tests
 not ok 2 - promises with just tap ___/# time=[0-9.]+(ms)?/~~~
   ---
-  {"at":{"column":3,"file":"test/fixtures/t.js","line":21},"results":{"count":7,"fail":2,"ok":false,"pass":5,"plan":{"end":7,"start":1}},"source":"t.test('promises with just tap', function (t) {\n"}
+  {"at":{"column":3,"file":"test/fixtures/t.js","line":24},"results":{"count":6,"fail":2,"ok":false,"pass":4,"plan":{"end":6,"start":1}},"source":"t.test('promises with just tap', function (t) {\n"}
   ...
 
 1..2

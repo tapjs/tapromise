@@ -1,12 +1,11 @@
 TAP version 13
     # Subtest: promises with tapromise
-    ok 1 - this comes before the rejection
-    ok 2 - should be equal
-    ok 3 - expect truthy value
-    ok 4 - should match pattern provided
-    not ok 5 - type is Number
+    ok 1 - should be equal
+    ok 2 - expect truthy value
+    ok 3 - should match pattern provided
+    not ok 4 - type is Number
       ---
-      {"at":{"column":7,"file":"test/fixtures/t.js","line":14},"compare":"===","found":"string","source":"t.isa(Promise.resolve('foo'), Number),\n","wanted":"Number"}
+      {"at":{"column":7,"file":"test/fixtures/t.js","line":15},"compare":"===","found":"string","source":"t.isa(Promise.resolve('foo'), Number),\n","wanted":"Number"}
       ...
     Bail out! # type is Number
 Bail out! # type is Number

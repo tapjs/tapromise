@@ -44,7 +44,8 @@ function makeMethod (self, t, i, desc) {
   var method = function () {
     var at = stack.at(method)
     var st = stack.captureString(method)
-    return P.all(arguments).then(function THEN (args) {
+    var args = Array.prototype.slice.call(arguments)
+    return P.all(args).then(function THEN (args) {
       t.assertAt = at
       t.assertStack = st
       return t[i].apply(t, args)

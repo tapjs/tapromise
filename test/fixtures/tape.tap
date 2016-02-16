@@ -1,12 +1,12 @@
 TAP version 13
 # promises with tapromise
-ok 1 this comes before the rejection
-ok 2 should be equal
-ok 3 (unnamed assert)
-not ok 4 should be equal
+ok 1 should be equal
+ok 2 (unnamed assert)
+not ok 3 should be equal
   ---
   {"actual":"foo","at":"THEN (___/.*?/~~~/index.js:___/[0-9]+/~~~:___/[0-9]+/~~~)","expected":"bar","operator":"equal"}
   ...
+ok 4 this comes before the rejection
 
 1..4
 # tests 4

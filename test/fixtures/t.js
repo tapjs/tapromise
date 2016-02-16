@@ -1,5 +1,6 @@
 var t = require('tap')
 var tapromise = require('../..')
+var Promise = require('bluebird')
 
 function promiseToBeTen () {
   return Promise.resolve(10)
@@ -14,7 +15,9 @@ t.test('promises with tapromise', function (t) {
     t.isa(Promise.resolve('foo'), Number),
     t.isa(Promise.resolve('bar'), 'string'),
     t.match(Promise.reject(new Error('oops')), {}),
-    t.ok(true, 'this comes before the rejection').then(() => true)
+    t.ok(true, 'this comes after the rejection').then(function () {
+      return true
+    })
   ])
 })
 
@@ -33,8 +36,8 @@ t.test('promises with just tap', function (t) {
     return Promise.resolve('bar')
   }).then(function (bar) {
     t.isa(bar, 'string')
-    t.ok(true, 'this comes before the rejection')
-  }).then(function () {
     return Promise.reject(new Error('oops'))
+  }).then(function () {
+    t.ok(true, 'this comes after the rejection')
   })
 })
