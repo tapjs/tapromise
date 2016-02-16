@@ -1,6 +1,6 @@
 {
   "name": "tapromise",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Turn any tap Test object into a promise-resolving thingie",
   "main": "index.js",
   "dependencies": {
