@@ -1,0 +1,33 @@
+{
+  "name": "tapromise",
+  "version": "0.0.0",
+  "description": "Turn any tap Test object into a promise-resolving thingie",
+  "main": "index.js",
+  "dependencies": {
+    "bluebird": "^3.3.1",
+    "stack-utils": "^0.4.0"
+  },
+  "devDependencies": {
+    "tap": "^5.5.0",
+    "tape": "^4.4.0"
+  },
+  "scripts": {
+    "test": "tap test/*.js"
+  },
+  "keywords": [
+    "tap",
+    "tape",
+    "test",
+    "promise"
+  ],
+  "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me/)",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tapjs/tapromise.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tapjs/tapromise/issues"
+  },
+  "homepage": "https://github.com/tapjs/tapromise#readme"
+}
