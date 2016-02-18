@@ -72,7 +72,16 @@ receives.
 
 ## API
 
-* `tapromise(test)` Returns a `tapromise` object with
+* `tapromise(test, [options])` Returns a `tapromise` object with
   methods corresponding to all methods on the `tap.Test` argument that
   accept Promises as args and returns a Promise that resolves when the
   assert has been made.
+
+  * `options.exclude` A list of method names to expose, but *not* wrap
+    in promise-resolving behavior.  Note that this means those methods
+    will probably execute synchronously and not return a promise.
+
+    You can use this if there are test methods you want to be able to
+    call right away.  It's also especially useful if you want to be
+    able to assert that a thing is a Promise, without automatically
+    resolving it.

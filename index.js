@@ -11,31 +11,55 @@ var stack = new StackUtils({
 
 var P = require('bluebird')
 
-function Tapromise (t) {
+function Tapromise (t, options) {
   if (!(this instanceof Tapromise)) {
-    return new Tapromise(t)
+    return new Tapromise(t, options)
   }
 
   if (!t || typeof t !== 'object') {
     throw new TypeError('Test object required')
   }
 
-  for (var i in t) {
-    if (typeof t[i] === 'function') {
-      makeMethod(this, t, i, {
-        writable: true,
-        enumerable: true,
-        configurable: true
-      })
-    }
+  options = options || {}
+  var exclude = options.exclude || []
+  if (typeof exclude === 'string') {
+    exclude = [ exclude ]
+  }
+  if (!Array.isArray(exclude)) {
+    throw new TypeError('non-array exclude list')
   }
 
+  // traverse over all enumerable props, including inherited
+  for (var i in t) {
+    if (typeof t[i] !== 'function') {
+      continue
+    }
+    if (exclude.indexOf(i) !== -1) {
+      this[i] = t[i].bind(t)
+      continue
+    }
+    makeMethod(this, t, i, {
+      writable: true,
+      enumerable: true,
+      configurable: true
+    })
+  }
+
+  // also include own value props that are not enumerable
   Object.getOwnPropertyNames(t).forEach(function (i) {
-    if (typeof t[i] === 'function' && !this[i]) {
-      var desc = Object.getOwnPropertyDescriptor(t, i)
-      if (desc.value) {
-        makeMethod(this, t, i, desc)
-      }
+    if (typeof t[i] !== 'function') {
+      return
+    }
+    if (this[i]) {
+      return
+    }
+    if (exclude.indexOf(i) !== -1) {
+      this[i] = t[i].bind(t)
+      return
+    }
+    var desc = Object.getOwnPropertyDescriptor(t, i)
+    if (desc.value) {
+      makeMethod(this, t, i, desc)
     }
   }, this)
 }
