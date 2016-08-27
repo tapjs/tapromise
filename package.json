@@ -10,7 +10,7 @@
   "devDependencies": {
     "glob": "^7.0.0",
     "js-yaml": "^3.5.3",
-    "tap": "^5.6.0",
+    "tap": "^7.0.0",
     "tape": "^4.4.0"
   },
   "scripts": {
