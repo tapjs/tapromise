@@ -4,7 +4,7 @@
   "description": "Turn any tap Test object into a promise-resolving thingie",
   "main": "index.js",
   "dependencies": {
-    "bluebird": "^3.3.1",
+    "bluebird": "^3.4.6",
     "stack-utils": "^0.4.0"
   },
   "devDependencies": {
