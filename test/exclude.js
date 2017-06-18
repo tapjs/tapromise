@@ -7,13 +7,20 @@ var tt = new Test()
 var out = ''
 var ended = false
 var expected = {
-  plan: { start: 1, end: 3 },
+  ok: false,
   count: 3,
   pass: 2,
-  ok: false,
   fail: 1,
-  time: Number
+  bailout: false,
+  todo: 0,
+  skip: 0,
+  plan: {
+    start: 1,
+    end: 3
+  },
+  failures: [ { id: 1, name: 'x' } ]
 }
+
 var r = null
 
 t.test('do some stuff', function (t) {

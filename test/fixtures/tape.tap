@@ -1,7 +1,7 @@
 TAP version 13
 # promises with tapromise
 ok 1 should be equal
-ok 2 (unnamed assert)
+ok 2 should be truthy
 not ok 3 should be equal
   ---
   {"actual":"foo","at":"THEN (___/.*?/~~~/index.js:___/[0-9]+/~~~:___/[0-9]+/~~~)","expected":"bar","operator":"equal"}
