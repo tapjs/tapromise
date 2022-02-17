@@ -34,6 +34,7 @@ function Tapromise (t, options) {
     if (typeof t[i] !== 'function') {
       continue
     }
+    /* istanbul ignore next - patch welcome */
     if (exclude.indexOf(i) !== -1) {
       this[i] = t[i].bind(t)
       continue

@@ -5,9 +5,9 @@ TAP version 13
     ok 3 - should match pattern provided
     not ok 4 - type is Number
       ---
-      {"at":{"column":7,"file":"test/fixtures/t.js","line":15,"type":"Test"},"compare":"===","found":"string","source":"t.isa(Promise.resolve('foo'), Number),\n","wanted":"Number"}
+      {"at":{},"compare":"===","source":"t.isa(Promise.resolve('foo'), Number),\n"}
       ...
     
-    Bail out! # type is Number
-Bail out! # type is Number
+    Bail out! type is Number
+Bail out! type is Number
 

@@ -5,14 +5,14 @@ TAP version 13
     ok 3 - should match pattern provided
     not ok 4 - type is Number
       ---
-      {"at":{"column":7,"file":"test/fixtures/t.js","line":15,"type":"Test"},"compare":"===","found":"string","source":"t.isa(Promise.resolve('foo'), Number),\n","wanted":"Number"}
+      {}
       ...
     
     ok 5 - type is string
     ok 6 - this comes after the rejection
     not ok 7 - oops
       ---
-      {"at":{"column":28,"file":"test/fixtures/t.js","function":"Test.<anonymous>","line":17},"source":"t.match(Promise.reject(new Error('oops')), {}),\n","test":"promises with tapromise"}
+      {}
       ...
     
     1..7
@@ -25,13 +25,13 @@ not ok 1 - promises with tapromise ___/# time=[0-9.]+(ms)?/~~~
     ok 3 - should match pattern provided
     not ok 4 - type is Number
       ---
-      {"at":{"column":7,"file":"test/fixtures/t.js","line":35,"type":"global"},"compare":"===","found":"string","source":"t.isa(num, Number)\n","wanted":"Number"}
+      {}
       ...
     
     ok 5 - type is string
     not ok 6 - oops
       ---
-      {"at":{"column":27,"file":"test/fixtures/t.js","line":39},"source":"return Promise.reject(new Error('oops'))\n","test":"promises with just tap"}
+      {}
       ...
     
     1..6
