@@ -8,7 +8,7 @@
     "stack-utils": "^0.4.0"
   },
   "devDependencies": {
-    "glob": "^7.0.0",
+    "glob": "^7.1.0",
     "js-yaml": "^3.5.3",
     "tap": "^15.1.6",
     "tape": "^4.4.0"
